@@ -1,0 +1,21 @@
+proxy:
+  secretToken: "your token here"
+
+singleuser:
+  image:
+    # image based off the jupyterhub/k8s-singleuser:0.9.0-beta.4 image
+    name: akchin/elyra
+    tag: dev
+  storage:
+    dynamic:
+      storageClass: ibmc-file-bronze-gid-fixed
+  defaultUrl: "/lab"
+#  uid: 0
+#  fsGid: 0
+
+hub:
+  db:
+    pvc:
+      storageClassName: ibmc-file-bronze-gid-fixed
+#  uid: 0
+#  fsGid: 0

@@ -1,0 +1,13 @@
+# Sometimes PV claim does not start for hub, so need to create it manually with this
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: hub-db-dir
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "ibmc-file-bronze-gid-fixed"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20Gi
